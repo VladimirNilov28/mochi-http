@@ -1,0 +1,38 @@
+# Python version
+target-version = "py313"
+
+# Formatting
+line-length = 88
+indent-width = 4
+
+[format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+docstring-code-format = true
+
+[lint]
+select = [
+    "E4",    # pycodestyle: import errors
+    "E7",    # pycodestyle: syntax conventions
+    "E9",    # pycodestyle: runtime errors
+    "F",     # Pyflakes: unused variables, imports, etc.
+    "I",     # isort: import sorting
+    "B",     # flake8-bugbear: common bugs
+    "UP",    # pyupgrade: modern Python syntax
+    "SIM",   # flake8-simplify: simplify code
+    "C4",    # flake8-comprehensions
+    "RUF",   # Ruff-specific rules
+    "ANN",   # Type annotations
+    "ASYNC", # Async-related issues
+    "S",     # Security checks
+]
+
+ignore = [
+    "S101",  # Allow assert (pytest)
+]
+
+[lint.per-file-ignores]
+"tests/**/*.py" = [
+    "ANN",   # No mandatory annotations in tests
+]
